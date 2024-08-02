@@ -8,6 +8,8 @@ def menu_principal():
         extrair()
     elif menu == 2:
         pass
+    elif menu == 3:
+        outros_menus()
     elif menu == 0:
         exit(1)
     else:
