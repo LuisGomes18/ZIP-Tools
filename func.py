@@ -13,7 +13,7 @@ def extrair():
     # Define o caminho do projeto atual
     caminho_projeto = os.getcwd()
 
-    # Verifica se existe uma pasta chamada "archive" e cria se não existir
+    # Verifica se existe uma pasta chamada 'archive' e cria se não existir
     caminho_guardar_zips = varificar_pasta_zips(caminho_projeto)
 
     # Solicita o caminho do arquivo ZIP
@@ -24,7 +24,7 @@ def extrair():
         print('Caminho inválido. Tente novamente.')
         caminho_ficheiro_zip = input('Insira o caminho do arquivo ZIP (0 para atual): ').strip()
 
-    # Se o caminho do arquivo ZIP for "0", define o caminho do arquivo ZIP como o caminho atual
+    # Se o caminho do arquivo ZIP for '0', define o caminho do arquivo ZIP como o caminho atual
     if caminho_ficheiro_zip == '0':
         caminho_ficheiro_zip = caminho_projeto
         print(f'Caminho do ficheiro será {caminho_ficheiro_zip}\n')
@@ -32,12 +32,12 @@ def extrair():
     # Solicita o nome do arquivo ZIP
     nome_ficheiro_zip = input('Insira o nome do arquivo ZIP: ').strip()
 
-    # Verifica se o nome do arquivo ZIP termina com ".zip" e não está vazio
+    # Verifica se o nome do arquivo ZIP termina com '.zip' e não está vazio
     while not nome_ficheiro_zip.endswith('.zip') or not nome_ficheiro_zip:
         print('Nome inválido. Tente novamente.')
         nome_ficheiro_zip = input('Insira o nome do arquivo ZIP: ').strip()
 
-    # Remove a extensão ".zip" do nome do arquivo ZIP
+    # Remove a extensão '.zip' do nome do arquivo ZIP
     nome_ficheiro_zip_sem = nome_ficheiro_zip[:-4]
 
     # Define os caminhos absolutos para o arquivo ZIP, a pasta temporária de extração e a pasta final de extração
