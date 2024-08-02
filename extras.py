@@ -3,7 +3,7 @@ from json import loads, dumps, JSONDecodeError
 
 
 def carregar_json():
-    """
+    '''
     This function loads the content of the 'data/config.json' file as a dictionary.
     It uses the 'open' function to open the file in read mode with the 'utf-8' encoding.
     The 'loads' function from the 'json' module is used to parse the JSON data.
@@ -18,7 +18,7 @@ def carregar_json():
     FileNotFoundError: If the file 'data/config.json' is not found.
     JSONDecodeError: If the file 'data/config.json' is not a valid JSON.
     Exception: If an unexpected error occurs while loading the file.
-    """
+    '''
 
     try:
         # Open the 'data/config.json' file in read mode with the 'utf-8' encoding
@@ -41,7 +41,7 @@ def carregar_json():
 
 
 def salvar_json(dados):
-    """
+    '''
     This function saves the given dictionary as a JSON to the 'data/config.json' file.
 
     Parameters:
@@ -54,7 +54,7 @@ def salvar_json(dados):
     FileNotFoundError: If the file 'data/config.json' is not found.
     TypeError: If the 'dados' parameter is not a dictionary.
     Exception: If an unexpected error occurs while saving the file.
-    """
+    '''
 
     # Check if the parameter passed is a dictionary
     if not isinstance(dados, dict):
@@ -83,7 +83,7 @@ def salvar_json(dados):
 
 
 def limpar_json():
-    """
+    '''
     This function clears the values of certain keys in the 'data/config.json' file.
     It loads the JSON data into a dictionary, modifies the dictionary, and then saves the modified dictionary back to the file.
     
@@ -92,7 +92,7 @@ def limpar_json():
     
     Returns:
     None
-    """
+    '''
 
     # Load the JSON data from the 'data/config.json' file into a dictionary
     config = carregar_json()
@@ -145,26 +145,26 @@ def limpar_json():
 
 
 def varificar_pasta_zips(caminho_projeto):
-    """
-    This function checks if a folder named "archive" exists in the given project path.
+    '''
+    This function checks if a folder named 'archive' exists in the given project path.
     If the folder does not exist, it creates the folder.
     
     Parameters:
     caminho_projeto (str): The path of the project.
     
     Returns:
-    str: The path of the "archive" folder.
-    """
+    str: The path of the 'archive' folder.
+    '''
 
-    # Concatenate the project path and the name of the folder "archive"
-    # We are joining the project path and the name of the folder "archive" together
+    # Concatenate the project path and the name of the folder 'archive'
+    # We are joining the project path and the name of the folder 'archive' together
     # This will create a new path that combines the project path and the folder name
     # The function os.path.join() is used to safely join paths
     # This is necessary because different operating systems have different conventions for how paths should be separated
-    # For example, in Windows, the path separator is "\" while in Unix-based systems it is "/"
-    caminho_guardar_zips = os.path.join(caminho_projeto, "archive")
+    # For example, in Windows, the path separator is '\' while in Unix-based systems it is '/'
+    caminho_guardar_zips = os.path.join(caminho_projeto, 'archive')
 
-    # Check if the folder "archive" exists
+    # Check if the folder 'archive' exists
     # We are using the os.path.exists() function to check if the folder exists
     # This function returns True if the path exists and False if it does not exist
     if not os.path.exists(caminho_guardar_zips):
@@ -174,6 +174,6 @@ def varificar_pasta_zips(caminho_projeto):
         # The function will raise an exception if the directory cannot be created
         os.makedirs(caminho_guardar_zips)
 
-    # Return the path of the "archive" folder
-    # We are returning the path of the "archive" folder that was created or already exists
+    # Return the path of the 'archive' folder
+    # We are returning the path of the 'archive' folder that was created or already exists
     return caminho_guardar_zips
